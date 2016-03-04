@@ -52,6 +52,9 @@ namespace System.Collections.Generic
 
         public extern bool Contains(T item);
 
+        [Template("convertAll({TOutput}, {converter})")]
+        public extern List<TOutput> ConvertAll<TOutput>(Converter<T, TOutput> converter);
+
         extern IEnumerator IEnumerable.GetEnumerator();
 
         public extern IEnumerator<T> GetEnumerator();

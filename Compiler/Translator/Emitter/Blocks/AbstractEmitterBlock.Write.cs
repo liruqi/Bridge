@@ -390,6 +390,29 @@ namespace Bridge.Translator
             return value.Replace("\n", "\n" + indent);
         }
 
+        public static string RemoveIndentFromString(string value, int offset)
+        {
+            StringBuilder output = new StringBuilder();
+            string indentWhiteSpaces = new string(' ', offset);
+
+            int level = offset/4;
+            for (var i = 0; i < level; i++)
+            {
+                output.Append("\t");
+            }
+
+            var needSpaces = offset%4;
+            if (needSpaces > 0)
+            {
+                output.Append(new string(' ', needSpaces));
+            }
+
+            string indentTabs = output.ToString();
+
+            value = value.Replace("\n" + indentWhiteSpaces, "\n");
+            return value.Replace("\n" + indentTabs, "\n");
+        }
+
         public virtual void EnsureComma(bool newLine = true)
         {
             if (this.Emitter.Comma)

@@ -23,6 +23,7 @@
             }
         }
     });
+    
     Bridge.init(TestIssue434.Issue434A.method1);
     Bridge.init(TestIssue434.Issue434A.method3);
     Bridge.init(TestIssue434.Issue434A.method4);
@@ -47,6 +48,7 @@
             }
         }
     });
+    
     Bridge.init(TestIssue434.Issue434B.method1);
     Bridge.init(TestIssue434.Issue434B.method3);
     Bridge.init(TestIssue434.Issue434B.method4);

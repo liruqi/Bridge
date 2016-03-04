@@ -58,6 +58,7 @@
     
     Bridge.define('TestIssue921Nested.Issue921NestedOuter.Issue921Nested', {
         statics: {
+            computeNumberStatic: null,
             config: {
                 properties: {
                     NameStatic: null,
@@ -69,6 +70,9 @@
             }
         },
         _offset: 0,
+        computeNumber: null,
+        computeTwoNumbers: null,
+        doWithNumbers: null,
         config: {
             properties: {
                 Name: null

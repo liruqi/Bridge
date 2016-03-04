@@ -14,6 +14,7 @@ namespace Bridge.Translator
     {
         public const string Bridge_ASSEMBLY = "Bridge";
         public const string BridgeResourcesList = "Bridge.Resources.list";
+        public const string SupportedProjectType = "Library";
         private static readonly Encoding OutputEncoding = System.Text.Encoding.UTF8;
         private static readonly string[] MinifierCodeSettingsInternalFileNames = new string[] { "bridge.js", "bridge.min.js", "bridge.collections.js", "bridge.collections.min.js" };
 
@@ -22,13 +23,13 @@ namespace Bridge.Translator
             EvalTreatment = Microsoft.Ajax.Utilities.EvalTreatment.MakeAllSafe,
             LocalRenaming = Microsoft.Ajax.Utilities.LocalRenaming.KeepAll,
             TermSemicolons = true,
-            StrictMode = true
+            StrictMode = false
         };
 
         private static readonly CodeSettings MinifierCodeSettingsInternal = new CodeSettings
         {
             TermSemicolons = true,
-            StrictMode = true
+            StrictMode = false
         };
 
         private static readonly CodeSettings MinifierCodeSettingsLocales = new CodeSettings

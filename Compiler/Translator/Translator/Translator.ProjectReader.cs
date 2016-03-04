@@ -26,6 +26,15 @@ namespace Bridge.Translator
                 this.ReadDefineConstants(doc);
             }
 
+            var projectType = (from n in doc.Descendants()
+                          where n.Name.LocalName == "OutputType"
+                          select n).ToArray();
+
+            if (projectType.Length > 0 && projectType[0] != null && projectType[0].Value != Translator.SupportedProjectType)
+            {
+                Bridge.Translator.Exception.Throw("Project type ({0}) is not supported, please use Library instead of {0}", projectType[0].Value);
+            }
+
             this.Log.Info("Reading project file done");
         }
 
@@ -170,7 +179,7 @@ namespace Bridge.Translator
                 // This constructor below works on Windows and does NOT break #531
                 project = new Project(this.Location, null, null, new ProjectCollection());
             }
-
+            
             var sourceFiles = new List<string>();
 
             foreach (var projectItem in project.GetItems("Compile"))

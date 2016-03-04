@@ -125,7 +125,7 @@ namespace Bridge.Translator
                 return null;
             }
 
-            if (!resolveResult.IsError && resolveResult.Type.IsKnownType(KnownTypeCode.Enum))
+            if (!resolveResult.IsError && (resolveResult.Type.IsKnownType(KnownTypeCode.Enum) || resolveResult.Type.Kind == TypeKind.Enum))
             {
                 return 0;
             }
@@ -170,7 +170,7 @@ namespace Bridge.Translator
                 return false;
             }
 
-            if (type.IsKnownType(KnownTypeCode.Enum))
+            if (type.IsKnownType(KnownTypeCode.Enum) || type.Kind == TypeKind.Enum)
             {
                 return 0;
             }

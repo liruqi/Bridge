@@ -210,36 +210,33 @@ namespace Bridge.Translator
                 hitCounters[0]++;
                 var parents = this.GetParents(t.Type);
 
-                for (int i = parents.Count - 1; i > -1; i--)
+                var tProcess = graph.Processes.FirstOrDefault(p => p.Name == t.Type.ReflectionName);
+                if (tProcess == null)
                 {
                     hitCounters[1]++;
+                    tProcess = new TopologicalSorting.OrderedProcess(graph, t.Type.ReflectionName);
+                }
+
+                for (int i = parents.Count - 1; i > -1; i--)
+                {
+                    hitCounters[2]++;
                     var x = parents[i];
-
-                    var t1 = t;
-                    var tProcess = graph.Processes.FirstOrDefault(p => p.Name == t1.Type.ReflectionName);
-                    if (tProcess == null)
-                    {
-                        hitCounters[2]++;
-                        tProcess = new TopologicalSorting.OrderedProcess(graph, t.Type.ReflectionName);
-                    }
-
-                    hitCounters[3]++;
 
                     if (tProcess.Predecessors.All(p => p.Name != x.Type.ReflectionName))
                     {
-                        hitCounters[4]++;
+                        hitCounters[3]++;
 
                         var dProcess = graph.Processes.FirstOrDefault(p => p.Name == x.Type.ReflectionName);
                         if (dProcess == null)
                         {
-                            hitCounters[5]++;
+                            hitCounters[4]++;
                             dProcess = new TopologicalSorting.OrderedProcess(graph, x.Type.ReflectionName);
                         }
                         //var dProcess = new TopologicalSorting.OrderedProcess(graph, dependency.Type.FullName);
 
                         if (dProcess.Predecessors.All(p => p.Name != tProcess.Name))
                         {
-                            hitCounters[6]++;
+                            hitCounters[4]++;
                             tProcess.After(dProcess);
                         }
                     }
@@ -253,7 +250,7 @@ namespace Bridge.Translator
 
             this.Log.Trace("\tTopological sorting first iteration done");
 
-            this.Log.Trace("\tTopological sorting second iteration...");
+            /*this.Log.Trace("\tTopological sorting second iteration...");
 
             System.Array.Clear(hitCounters, 0, hitCounters.Length);
 
@@ -308,7 +305,7 @@ namespace Bridge.Translator
 
             this.Log.Trace("\t\tgraph.ProcessCount = " + graph.ProcessCount);
 
-            this.Log.Trace("\tTopological sorting second iteration done");
+            this.Log.Trace("\tTopological sorting second iteration done");*/
 
             if (graph.ProcessCount > 0)
             {

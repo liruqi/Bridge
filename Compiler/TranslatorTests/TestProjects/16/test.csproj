@@ -33,34 +33,36 @@
     <NoStdLib>True</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BridgeIssues\N059.cs" />
-    <Compile Include="BridgeIssues\N089.cs" />
-    <Compile Include="BridgeIssues\N084.cs" />
-    <Compile Include="BridgeIssues\N066.cs" />
-    <Compile Include="BridgeIssues\N065.cs" />
-    <Compile Include="BridgeIssues\N064.cs" />
-    <Compile Include="BridgeIssues\N062.cs" />
-    <Compile Include="BridgeIssues\N391.cs" />
-    <Compile Include="BridgeIssues\N447.cs" />
-    <Compile Include="BridgeIssues\N527.cs" />
-    <Compile Include="BridgeIssues\N644B.cs" />
-    <Compile Include="BridgeIssues\N644A.cs" />
-    <Compile Include="BridgeIssues\N694.cs" />
-    <Compile Include="BridgeIssues\N557.cs" />
-    <Compile Include="BridgeIssues\N542.cs" />
-    <Compile Include="BridgeIssues\N534.cs" />
-    <Compile Include="BridgeIssues\N528.cs" />
-    <Compile Include="BridgeIssues\N524.cs" />
-    <Compile Include="BridgeIssues\N477.cs" />
-    <Compile Include="BridgeIssues\N411.cs" />
-    <Compile Include="BridgeIssues\N475A.cs" />
-    <Compile Include="BridgeIssues\N475B.cs" />
-    <Compile Include="BridgeIssues\N963.cs" />
-    <Compile Include="BridgeIssues\N883.cs" />
-    <Compile Include="BridgeIssues\N882.cs" />
-    <Compile Include="BridgeIssues\N856.cs" />
+    <Compile Include="BridgeIssues\0500\N059.cs" />
+    <Compile Include="BridgeIssues\0500\N089.cs" />
+    <Compile Include="BridgeIssues\0500\N084.cs" />
+    <Compile Include="BridgeIssues\0500\N066.cs" />
+    <Compile Include="BridgeIssues\0500\N065.cs" />
+    <Compile Include="BridgeIssues\0500\N064.cs" />
+    <Compile Include="BridgeIssues\0500\N062.cs" />
+    <Compile Include="BridgeIssues\0500\N391.cs" />
+    <Compile Include="BridgeIssues\0500\N447.cs" />
+    <Compile Include="BridgeIssues\1000\N527.cs" />
+    <Compile Include="BridgeIssues\1000\N644B.cs" />
+    <Compile Include="BridgeIssues\1000\N644A.cs" />
+    <Compile Include="BridgeIssues\1000\N694.cs" />
+    <Compile Include="BridgeIssues\1000\N557.cs" />
+    <Compile Include="BridgeIssues\1000\N542.cs" />
+    <Compile Include="BridgeIssues\1000\N534.cs" />
+    <Compile Include="BridgeIssues\1000\N528.cs" />
+    <Compile Include="BridgeIssues\1000\N524.cs" />
+    <Compile Include="BridgeIssues\0500\N477.cs" />
+    <Compile Include="BridgeIssues\0500\N411.cs" />
+    <Compile Include="BridgeIssues\0500\N475A.cs" />
+    <Compile Include="BridgeIssues\0500\N475B.cs" />
+    <Compile Include="BridgeIssues\1000\N883A.cs" />
+    <Compile Include="BridgeIssues\1000\N963.cs" />
+    <Compile Include="BridgeIssues\1000\N883.cs" />
+    <Compile Include="BridgeIssues\1000\N882.cs" />
+    <Compile Include="BridgeIssues\1000\N856.cs" />
+    <Compile Include="BridgeIssues\1500\N1009.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BridgeIssues\N384.cs" />
+    <Compile Include="BridgeIssues\0500\N384.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Bridge\bridge.json" />

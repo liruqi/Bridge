@@ -28,7 +28,7 @@
                 doubleArray[0] = 8;
     
                 stringArray[0] = "9";
-                decimalArray[0]  = Bridge.Decimal(10.0);
+                decimalArray[0] = Bridge.Decimal(10.0);
             }
         }
     });

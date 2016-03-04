@@ -1,8 +1,6 @@
 ﻿(function (globals) {
     "use strict";
 
-    Bridge.define('Test.BridgeIssues.N384.Person');
-    
     Bridge.define('Test.BridgeIssues.N384.N384');
     
     Bridge.define('Test.BridgeIssues.N384.N384.App', {
@@ -15,6 +13,8 @@
             }
         }
     });
+    
+    Bridge.define('Test.BridgeIssues.N384.Person');
     
     
     

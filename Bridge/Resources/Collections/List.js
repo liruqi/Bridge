@@ -263,6 +263,19 @@ Bridge.Class.generic('Bridge.List$1', function (T) {
             }
 
             return Bridge.Array.binarySearch(this.items, index, length, value, comparer);
+        },
+
+        convertAll: function (TOutput, converter) {
+            if (!Bridge.hasValue(converter)) {
+                throw new Bridge.ArgumentNullException("converter is null.");
+            }
+
+            var list = new Bridge.List$1(TOutput)(this.items.length);
+            for (var i = 0; i < this.items.length; i++) {
+                list.items[i] = converter(this.items[i]);
+            }
+
+            return list;
         }
     }));
 });

@@ -302,7 +302,7 @@ namespace Bridge.Translator
             this.Emitter.AssignmentType = oldAssigmentType;
             this.Emitter.IsAssignment = oldAssigment;
 
-            if (this.Emitter.Writers.Count == 0 && !delegateAssigment && !thisAssignment)
+            if (this.Emitter.Writers.Count == initCount && !delegateAssigment && !thisAssignment)
             {
                 this.WriteSpace();
             }
@@ -311,7 +311,7 @@ namespace Bridge.Translator
             {
                 if (this.Emitter.Writers.Count == initCount)
                 {
-                    this.Write(" = ");
+                    this.Write("= ");
                 }
 
                 this.HandleDecimal(rr, variable);
@@ -462,8 +462,7 @@ namespace Bridge.Translator
                     this.Write(", ");
                 }
 
-                int count = this.Emitter.Writers.Count;
-                if (count == 0 && !thisAssignment && !special)
+                if (this.Emitter.Writers.Count == initCount && !thisAssignment && !special)
                 {
                     this.Write("= ");
                 }

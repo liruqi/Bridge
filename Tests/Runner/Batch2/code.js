@@ -28,7 +28,7 @@
                 doubleArray[0] = 8;
     
                 stringArray[0] = "9";
-                decimalArray[0]  = Bridge.Decimal(10.0);
+                decimalArray[0] = Bridge.Decimal(10.0);
     
                 Bridge.get(Bridge.Test.Assert).areEqual$1(1, byteArray[0], "get byteArray[0]");
                 Bridge.get(Bridge.Test.Assert).areEqual$1(2, sbyteArray[0], "get sbyteArray[0]");

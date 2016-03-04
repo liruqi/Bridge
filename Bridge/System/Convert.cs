@@ -12,7 +12,7 @@ namespace System
         /// Converts the value of a specified object to an equivalent Boolean value.
         /// Note: Calling this method for <see cref="char"/> and <see cref="DateTime"/> values always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toBoolean({value}, null)")]
+        [Template("Bridge.Convert.toBoolean({value})")]
         public static extern bool ToBoolean(object value);
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace System
         [Template("Bridge.Convert.toBoolean({value}, {provider})")]
         public static extern bool ToBoolean(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToBoolean
 
         #region ToChar
 
@@ -136,7 +136,7 @@ namespace System
         [Template("Bridge.Convert.toChar({value}, null, " + TypeCodeValues.DateTime + ")")]
         public static extern char ToChar(DateTime value);
 
-        #endregion
+        #endregion ToChar
 
         #region ToSByte
 
@@ -144,7 +144,7 @@ namespace System
         /// Converts the value of the specified object to an 8-bit signed integer.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toSByte({value}, null)")]
+        [Template("Bridge.Convert.toSByte({value})")]
         public static extern sbyte ToSByte(object value);
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace System
         [Template("Bridge.Convert.toSByte({value}, {provider}, " + TypeCodeValues.String + ")")]
         public static extern sbyte ToSByte(string value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToSByte
 
         #region ToByte
 
@@ -174,7 +174,7 @@ namespace System
         /// Converts the value of the specified object to an 8-bit unsigned integer.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toByte({value}, null)")]
+        [Template("Bridge.Convert.toByte({value})")]
         public static extern byte ToByte(object value);
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace System
         [Template("Bridge.Convert.toByte({value}, {provider})")]
         public static extern byte ToByte(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToByte
 
         #region ToInt16
 
@@ -192,7 +192,7 @@ namespace System
         /// Converts the value of the specified object to a 16-bit signed integer.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toInt16({value}, null)")]
+        [Template("Bridge.Convert.toInt16({value})")]
         public static extern short ToInt16(object value);
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace System
         [Template("Bridge.Convert.toInt16({value}, {provider})")]
         public static extern short ToInt16(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToInt16
 
         #region ToUInt16
 
@@ -210,7 +210,7 @@ namespace System
         /// Converts the value of the specified object to a 16-bit unsigned integer.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toUInt16({value}, null)")]
+        [Template("Bridge.Convert.toUInt16({value})")]
         public static extern ushort ToUInt16(object value);
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace System
         [Template("Bridge.Convert.toUInt16({value}, {provider})")]
         public static extern ushort ToUInt16(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToUInt16
 
         #region ToInt32
 
@@ -228,7 +228,7 @@ namespace System
         /// Converts the value of the specified object to a 32-bit signed integer.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toInt32({value}, null)")]
+        [Template("Bridge.Convert.toInt32({value})")]
         public static extern int ToInt32(object value);
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace System
         [Template("Bridge.Convert.toInt32({value}, {provider})")]
         public static extern int ToInt32(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToInt32
 
         #region ToUInt32
 
@@ -246,7 +246,7 @@ namespace System
         /// Converts the value of the specified object to a 32-bit unsigned integer.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toUInt32({value}, null)")]
+        [Template("Bridge.Convert.toUInt32({value})")]
         public static extern uint ToUInt32(object value);
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace System
         [Template("Bridge.Convert.toUInt32({value}, {provider})")]
         public static extern uint ToUInt32(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToUInt32
 
         #region ToInt64
 
@@ -264,7 +264,7 @@ namespace System
         /// Converts the value of the specified object to a 64-bit signed integer.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toInt64({value}, null)")]
+        [Template("Bridge.Convert.toInt64({value})")]
         public static extern long ToInt64(object value);
 
         /// <summary>
@@ -274,7 +274,7 @@ namespace System
         [Template("Bridge.Convert.toInt64({value}, {provider})")]
         public static extern long ToInt64(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToInt64
 
         #region ToUInt64
 
@@ -282,7 +282,7 @@ namespace System
         /// Converts the value of the specified object to a 64-bit unsigned integer.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toUInt64({value}, null)")]
+        [Template("Bridge.Convert.toUInt64({value})")]
         public static extern ulong ToUInt64(object value);
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace System
         [Template("Bridge.Convert.toUInt64({value}, {provider})")]
         public static extern ulong ToUInt64(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToUInt64
 
         #region ToSingle
 
@@ -300,7 +300,7 @@ namespace System
         /// Converts the value of the specified object to a single-precision floating-point number.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toSingle({value}, null)")]
+        [Template("Bridge.Convert.toSingle({value})")]
         public static extern float ToSingle(object value);
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace System
         [Template("Bridge.Convert.toSingle({value}, {provider})")]
         public static extern float ToSingle(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToSingle
 
         #region ToDouble
 
@@ -318,7 +318,7 @@ namespace System
         /// Converts the value of the specified object to a double-precision floating-point number.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toDouble({value}, null)")]
+        [Template("Bridge.Convert.toDouble({value})")]
         public static extern double ToDouble(object value);
 
         /// <summary>
@@ -328,7 +328,7 @@ namespace System
         [Template("Bridge.Convert.toDouble({value}, {provider})")]
         public static extern double ToDouble(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToDouble
 
         #region ToDecimal
 
@@ -336,7 +336,7 @@ namespace System
         /// Converts the value of the specified object to an equivalent decimal number.
         /// Note: Calling this method for <see cref="DateTime"/> value always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toDecimal({value}, null)")]
+        [Template("Bridge.Convert.toDecimal({value})")]
         public static extern decimal ToDecimal(object value);
 
         /// <summary>
@@ -346,7 +346,7 @@ namespace System
         [Template("Bridge.Convert.toDecimal({value}, {provider})")]
         public static extern decimal ToDecimal(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToDecimal
 
         #region ToDateTime
 
@@ -354,7 +354,7 @@ namespace System
         /// Converts the value of the specified object to a <see cref="T:System.DateTime"/> object.
         /// Note: Calling this method for built-in types (except <see cref="DateTime"/>, <see cref="string"/>) always throws <see cref="T:System.InvalidCastException"/>.
         /// </summary>
-        [Template("Bridge.Convert.toDateTime({value}, null)")]
+        [Template("Bridge.Convert.toDateTime({value})")]
         public static extern DateTime ToDateTime(object value);
 
         /// <summary>
@@ -364,14 +364,14 @@ namespace System
         [Template("Bridge.Convert.toDateTime({value}, {provider})")]
         public static extern DateTime ToDateTime(object value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToDateTime
 
         #region ToString
 
         /// <summary>
         /// Converts the value of the specified object to its equivalent string representation.
         /// </summary>
-        [Template("Bridge.Convert.toString({value}, null)")]
+        [Template("Bridge.Convert.toString({value})")]
         public static extern string ToString(object value);
 
         /// <summary>
@@ -392,7 +392,7 @@ namespace System
         [Template("Bridge.Convert.toString({value}, {provider}, " + TypeCodeValues.Char + ")")]
         public static extern string ToString(char value, IFormatProvider provider);
 
-        #endregion
+        #endregion ToString
 
         #region ToNumberFromBase
 
@@ -444,7 +444,7 @@ namespace System
         [Template("Bridge.Convert.toNumberInBase({value}, {fromBase}, " + TypeCodeValues.UInt64 + ")")]
         public static extern ulong ToUInt64(string value, int fromBase);
 
-        #endregion
+        #endregion ToNumberFromBase
 
         #region ToStringInBase
 
@@ -472,7 +472,7 @@ namespace System
         [Template("Bridge.Convert.toStringInBase({value}, {toBase}, " + TypeCodeValues.Int64 + ")")]
         public static extern string ToString(long value, int toBase);
 
-        #endregion
+        #endregion ToStringInBase
 
         #region ToBase64String
 
@@ -501,15 +501,14 @@ namespace System
         [Template("Bridge.Convert.toBase64String({inArray}, {offset}, {length}, {options})")]
         public static extern string ToBase64String(byte[] inArray, int offset, int length, Base64FormattingOptions options);
 
-        #endregion
+        #endregion ToBase64String
 
         #region ToBase64CharArray
-
 
         /// <summary>
         /// Converts a subset of an 8-bit unsigned integer array to an equivalent subset of a Unicode character array encoded with base-64 digits. Parameters specify the subsets as offsets in the input and output arrays, and the number of elements in the input array to convert.
         /// </summary>
-        /// 
+        ///
         /// <returns>
         /// A 32-bit signed integer containing the number of bytes in <paramref name="outArray"/>.
         /// </returns>
@@ -519,14 +518,14 @@ namespace System
         /// <summary>
         /// Converts a subset of an 8-bit unsigned integer array to an equivalent subset of a Unicode character array encoded with base-64 digits. Parameters specify the subsets as offsets in the input and output arrays, the number of elements in the input array to convert, and whether line breaks are inserted in the output array.
         /// </summary>
-        /// 
+        ///
         /// <returns>
         /// A 32-bit signed integer containing the number of bytes in <paramref name="outArray"/>.
         /// </returns>
         [Template("Bridge.Convert.toBase64CharArray({inArray}, {offsetIn}, {length}, {outArray}, {offsetOut}, {options})")]
         public static extern int ToBase64CharArray(byte[] inArray, int offsetIn, int length, char[] outArray, int offsetOut, Base64FormattingOptions options);
 
-        #endregion
+        #endregion ToBase64CharArray
 
         #region FromBase64String
 
@@ -536,7 +535,7 @@ namespace System
         [Template("Bridge.Convert.fromBase64String({s})")]
         public static extern byte[] FromBase64String(string s);
 
-        #endregion
+        #endregion FromBase64String
 
         #region FromBase64CharArray
 
@@ -546,6 +545,6 @@ namespace System
         [Template("Bridge.Convert.fromBase64CharArray({inArray}, {offset}, {length})")]
         public static extern byte[] FromBase64CharArray(char[] inArray, int offset, int length);
 
-        #endregion
+        #endregion FromBase64CharArray
     }
 }

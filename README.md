@@ -102,7 +102,7 @@ More information regarding  Nuget package installation for Bridge is available i
 
 ## Contributing
 
-Interested in contributing to Bridge? Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+Interested in contributing to Bridge? Please see [CONTRIBUTING.md](https://github.com/bridgedotnet/Bridge/blob/master/.github/CONTRIBUTING.md).
 
 We also flag some Issues as [up-for-grabs](https://github.com/bridgedotnet/Bridge/issues?q=is%3Aopen+is%3Aissue+label%3Aup-for-grabs). These are generally easy introductions to the inner workings of Bridge, although are items we just haven't had time to implement. Your help is always appreciated.
 

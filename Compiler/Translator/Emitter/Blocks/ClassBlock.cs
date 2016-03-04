@@ -241,6 +241,12 @@ namespace Bridge.Translator
             this.WriteSemiColon();
 
             var afterDefineMethods = this.GetAfterDefineMethods();
+
+            if (afterDefineMethods.Any())
+            {
+                this.WriteNewLine();
+            }
+
             foreach (var method in afterDefineMethods)
             {
                 this.WriteNewLine();

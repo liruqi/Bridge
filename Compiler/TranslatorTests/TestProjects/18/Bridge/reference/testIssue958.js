@@ -3,41 +3,6 @@
 
     Bridge.define('TestIssue958.IMessage');
     
-    Bridge.define('TestIssue958.SetName', {
-        inherits: [TestIssue958.IMessage],
-        config: {
-            properties: {
-                Name: null
-            }
-        },
-        constructor: function (name) {
-            this.setName(name);
-        }
-    });
-    
-    Bridge.define('TestIssue958.SetValue', {
-        inherits: [TestIssue958.IMessage],
-        config: {
-            properties: {
-                Value: null
-            }
-        },
-        constructor: function (value) {
-            this.setValue(value);
-        }
-    });
-    
-    Bridge.define('TestIssue958.MessageExtensions', {
-        statics: {
-            $if: function (T, source, work) {
-                if (Bridge.is(source, T)) {
-                    work(Bridge.cast(source, T));
-                }
-                return source;
-            }
-        }
-    });
-    
     Bridge.define('TestIssue958.Issue958', {
         statics: {
             main: function () {
@@ -61,6 +26,41 @@
         },
         f2: function (action) {
             console.log("Value: " + action.getValue());
+        }
+    });
+    
+    Bridge.define('TestIssue958.MessageExtensions', {
+        statics: {
+            $if: function (T, source, work) {
+                if (Bridge.is(source, T)) {
+                    work(Bridge.cast(source, T));
+                }
+                return source;
+            }
+        }
+    });
+    
+    Bridge.define('TestIssue958.SetName', {
+        inherits: [TestIssue958.IMessage],
+        config: {
+            properties: {
+                Name: null
+            }
+        },
+        constructor: function (name) {
+            this.setName(name);
+        }
+    });
+    
+    Bridge.define('TestIssue958.SetValue', {
+        inherits: [TestIssue958.IMessage],
+        config: {
+            properties: {
+                Value: null
+            }
+        },
+        constructor: function (value) {
+            this.setValue(value);
         }
     });
     

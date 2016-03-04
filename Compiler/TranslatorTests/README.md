@@ -12,7 +12,7 @@ A test fails if any descrepancies found.
 
 **Working with server-side NUnit tests**
 
- 1) Install a NUnit test runner. For example,  NUnit Test Adapter for Visual Studio https://visualstudiogallery.msdn.microsoft.com/6ab922d0-21c0-4f06-ab5f-4ecd1fe7175d
+ 1) Install [NUnit3 Test Adapter](https://visualstudiogallery.msdn.microsoft.com/0da0f6bd-9bb6-4ae3-87a8-537788622f2d)  
  2) Run the tests in Visual Studio `Test Explorer` window.
 
 Basically, there are two reasons why a test can fail:    
@@ -53,8 +53,8 @@ Basically, there are two reasons why a test can fail:
   - Run all tests locally in Visual Studio using NUnit Test Adapter;
   - Push the changes.
   
-**Troubleshooting on CI server**
-1) Test results are on the build TESTS page. For example, https://ci.appveyor.com/project/ObjectDotNet/builder/build/tests
-   It contains both js client tests and cs server tests
+**Troubleshooting on CI server**  
+1) Test results are on the build TESTS page. For example, https://ci.appveyor.com/project/ObjectDotNet/builder/build/tests  
+   It contains both js client tests and cs server tests  
 2) There are logs accessible on the build ARTIFACTS page (three msbuild log files and one test log file `Bridge.Translator.Tests.run.log`)
    For example, https://ci.appveyor.com/project/ObjectDotNet/builder/build/artifacts

@@ -93,6 +93,7 @@
     <Compile Include="System\Collections\Generic\ISet.cs" />
     <Compile Include="System\Collections\ObjectModel\ReadOnlyCollection.cs" />
     <Compile Include="System\Comparison.cs" />
+    <Compile Include="System\Converter.cs" />
     <Compile Include="System\Diagnostics\ConditionalAttribute.cs" />
     <Compile Include="System\Diagnostics\Contracts\Contract.cs" />
     <Compile Include="System\Diagnostics\Contracts\ContractAbbreviatorAttribute.cs" />
