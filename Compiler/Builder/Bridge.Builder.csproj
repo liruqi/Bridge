@@ -56,9 +56,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Contract\Bridge.Contract.csproj">
       <Project>{52ae9e3e-6929-4720-ab7a-f9f22b9a8972}</Project>
       <Name>Bridge.Contract</Name>

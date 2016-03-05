@@ -1,7 +1,7 @@
 ﻿/*
- * @version   : 1.11.1 - Bridge.NET
+ * @version   : 1.11.2 - Bridge.NET
  * @author    : Object.NET, Inc. http://bridge.net/
- * @date      : 2016-02-29
+ * @date      : 2016-03-04
  * @copyright : Copyright (c) 2008-2016, Object.NET, Inc. (http://object.net/). All rights reserved.
  * @license   : See license.txt and https://github.com/bridgedotnet/Bridge.NET/blob/master/LICENSE.
  */

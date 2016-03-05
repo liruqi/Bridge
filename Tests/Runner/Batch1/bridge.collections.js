@@ -451,6 +451,7 @@
     Bridge.define('Bridge.Collections.HashHelpers', {
         statics: {
             HashPrime: 101,
+            primes: null,
             MaxPrimeArrayLength: 2146435069,
             config: {
                 init: function () {

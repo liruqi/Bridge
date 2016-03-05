@@ -66,6 +66,28 @@
             throws$5: function (block, message) {
                 Bridge.get(Bridge.Test.Assert).assert.throws(block, message);
             },
+            throws$6: function (T, block) {
+                Bridge.get(Bridge.Test.Assert).throws$7(T, block, "");
+            },
+            throws$7: function (T, block, message) {
+                var actual = null;
+                var expected = Bridge.getTypeName(T);
+    
+                try {
+                    block();
+                }
+                catch (ex) {
+                    ex = Bridge.Exception.create(ex);
+                    actual = Bridge.getTypeName(ex);
+                }
+    
+                if (actual !== expected) {
+                    Bridge.get(Bridge.Test.Assert).assert.equal(actual, expected, message);
+                }
+                else  {
+                    Bridge.get(Bridge.Test.Assert).assert.ok(true, message);
+                }
+            },
             throws$3: function (block, expected) {
                 Bridge.get(Bridge.Test.Assert).assert.throws(block, expected);
             },
