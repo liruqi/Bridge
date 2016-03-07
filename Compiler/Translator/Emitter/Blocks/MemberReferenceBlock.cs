@@ -171,6 +171,12 @@ namespace Bridge.Translator
                 {
                     return;
                 }
+
+                if (!string.IsNullOrEmpty(interceptor.Replacement))
+                {
+                    this.Write(interceptor.Replacement);
+                    return;
+                }
             }
 
             if (globalTarget != null && globalTarget.Item1)
