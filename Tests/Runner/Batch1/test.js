@@ -1048,6 +1048,7 @@
                 QUnit.test("#1141 - TestLongDivisionInfiniteLoopFixed", Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge1141.testLongDivisionInfiniteLoopFixed);
                 QUnit.test("#1144 - TestStringFormat", Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge1144.testStringFormat);
                 QUnit.test("#1146 - TestLongIssues", Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge1146.testLongIssues);
+                QUnit.test("#1148 - ConversionsToDecimalInBorderlineCasesWork", Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge1148.conversionsToDecimalInBorderlineCasesWork);
                 QUnit.test("#381 - TestUseCase", Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge381.testUseCase);
                 QUnit.test("#447 - CheckInlineExpression", Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge447.checkInlineExpression);
                 QUnit.test("#447 - CheckInlineCalls", Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge447.checkInlineCalls);
@@ -2779,6 +2780,16 @@
             testLongIssues: function (assert) {
                 var t = Bridge.Test.QUnit.TestFixture$1(Bridge.ClientTest.BridgeIssues.Bridge1146).beforeTest(false, assert, Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge1146);
                 Bridge.ClientTest.BridgeIssues.Bridge1146.testLongIssues();
+            }
+        }
+    });
+    
+    Bridge.define('Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge1148', {
+        inherits: [Bridge.Test.QUnit.TestFixture$1(Bridge.ClientTest.BridgeIssues.Bridge1148)],
+        statics: {
+            conversionsToDecimalInBorderlineCasesWork: function (assert) {
+                var t = Bridge.Test.QUnit.TestFixture$1(Bridge.ClientTest.BridgeIssues.Bridge1148).beforeTest(true, assert, Bridge.Test.QUnit.TestRunner.Bridge_ClientTest_BridgeIssues_Bridge1148, 5);
+                t.getFixture().conversionsToDecimalInBorderlineCasesWork();
             }
         }
     });
