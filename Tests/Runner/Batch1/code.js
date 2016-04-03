@@ -4267,6 +4267,34 @@ SomeExternalNamespace.SomeNonBridgeClass.prototype.foo = function(){return 1;};
         }
     });
     
+    Bridge.define('Bridge.ClientTest.BridgeIssues.Bridge1148', {
+        conversionsToDecimalInBorderlineCasesWork: function () {
+            var nan = Number.NaN;
+            var p = Number.POSITIVE_INFINITY;
+            var n = Number.NEGATIVE_INFINITY;
+            var max = Number.MAX_VALUE;
+            var min = -Number.MAX_VALUE;
+    
+            // https://msdn.microsoft.com/en-us/library/aa691289(v=vs.71).aspx
+            // If the source value is NaN, infinity, or too large to represent as a decimal, a System.OverflowException is thrown.
+            Bridge.Test.Assert.throws$7(Bridge.OverflowException, function () {
+                var x = Bridge.Decimal(nan);
+            }, "NaN -> decimal");
+            Bridge.Test.Assert.throws$7(Bridge.OverflowException, function () {
+                var x = Bridge.Decimal(p);
+            }, "PositiveInfinity -> decimal");
+            Bridge.Test.Assert.throws$7(Bridge.OverflowException, function () {
+                var x = Bridge.Decimal(n);
+            }, "NegativeInfinity -> decimal");
+            Bridge.Test.Assert.throws$7(Bridge.OverflowException, function () {
+                var x = Bridge.Decimal(max);
+            }, "MaxValue -> decimal");
+            Bridge.Test.Assert.throws$7(Bridge.OverflowException, function () {
+                var x = Bridge.Decimal(min);
+            }, "MinValue -> decimal");
+        }
+    });
+    
     Bridge.define('Bridge.ClientTest.BridgeIssues.Bridge169', {
         statics: {
             number: 0,
