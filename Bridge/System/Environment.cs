@@ -8,7 +8,7 @@ namespace System
     {
         public static string NewLine
         {
-            [Template("'\\n'")]
+            [Template("\"\\r\\n\"")]
             get
             {
                 return null;
