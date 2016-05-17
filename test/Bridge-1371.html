@@ -15,17 +15,16 @@
             }
             var e = Bridge.cast(node, HTMLElement);
             console.log(e.tagName)
-            if (node.childNodes != null) {
-                    $t = Bridge.getEnumerator(node.childNodes);
-                    do {
-                        var childNode = $t.getCurrent();
-                        travelOnRawNode(childNode);
-                    } while ($t.moveNext());
-                }
+            for (var i = 0; i<node.childNodes.length; i++) {
+                travelOnRawNode(node.childNodes[i]);
+            }
 		}
-		var d = document.createElement('html');
-		d.innerHTML = document.childNodes[1].innerHTML;
-		travelOnRawNode(d);
+
+        window.onload = function () {
+            var d = document.createElement('html');
+            d.innerHTML = document.body.outerHTML;
+            travelOnRawNode(d);
+        }
     </script>
 </head>
 <body>
