@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bridge by liruqi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Bridge</h1>
+      <h2 class="project-tagline">Write modern mobile and web apps in C#. Run them anywhere in JavaScript with Bridge.NET.</h2>
+      <a href="https://github.com/liruqi/Bridge" class="btn">View on GitHub</a>
+      <a href="https://github.com/liruqi/Bridge/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/liruqi/Bridge/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="" class="anchor" href="#" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><img src="https://cloud.githubusercontent.com/assets/62210/13193769/bce9470e-d73b-11e5-8fc6-1ab4c8f9218f.png" alt="Bridge.NET - C# to JavaScript Compiler">
+</h1>
+
+<p><a href="https://gitter.im/bridgedotnet/Bridge?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/bridgedotnet/Bridge.svg" alt="Join the chat at https://gitter.im/bridgedotnet/Bridge"></a></p>
+
+<p><a href="http://bridge.net/">Bridge.NET</a> is an open source C#-to-JavaScript Compiler.</p>
+
+<p>Compile your C#...</p>
+
+<div class="highlight highlight-source-cs"><pre>Console.WriteLine(<span class="pl-s"><span class="pl-pds">"</span>Hello, World!<span class="pl-pds">"</span></span>);</pre></div>
+
+<p>into JavaScript</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>Hello, World!<span class="pl-pds">"</span></span>);</pre></div>
+
+<h2>
+<a id="tldr" class="anchor" href="#tldr" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TL;DR</h2>
+
+<ul>
+<li>Read the <a href="http://bridge.net/kb/getting-started/">Getting Started</a> Knowledge Base article</li>
+<li>Try <a href="http://live.bridge.net">Live Bridge</a> if you want to just play</li>
+<li>Installation:
+
+<ul>
+<li>Add <strong>Bridge.NET</strong> Visual Studio extension, or </li>
+<li>Use <a href="https://www.nuget.org/packages/bridge">NuGet</a> to install into a C# Class Library project (<code>Install-Package Bridge</code>)</li>
+</ul>
+</li>
+<li>The <a href="http://bridge.net/kb/attribute-reference/">Attribute Reference</a> is important</li>
+<li>Licensed under <a href="LICENSE">Apache License, Version 2.0</a>
+</li>
+<li>Need Help? Bridge.NET <a href="http://forums.bridge.net/">Forums</a> or GitHub <a href="https://github.com/bridgedotnet/Bridge/issues">Issues</a>
+</li>
+<li>
+<a href="twitter.com/bridgedotnet">@bridgedotnet</a> on Twitter</li>
+</ul>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>A great place to start if you're new to Bridge.NET is reviewing the <a href="http://bridge.net/kb/getting-started/">Getting Started</a> Knowledge Base article.</p>
+
+<p>The easiest place to see Bridge in action is <a href="http://live.bridge.net/">Live Bridge</a>. </p>
+
+<h2>
+<a id="sample" class="anchor" href="#sample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample</h2>
+
+<p>The following code sample demonstrates a simple <strong>App.cs</strong> class that will run automatically on page load and prompt with an <code>alert</code> message.</p>
+
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> Bridge<span class="pl-k">;</span>
+<span class="pl-k">using</span> Bridge.Html5<span class="pl-k">;</span>
+
+<span class="pl-k">namespace</span> <span class="pl-en">Demo</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">App</span>
+    {
+        [Ready]
+        <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">Main</span>()
+        {
+            <span class="pl-c">// Simple alert() to confirm it's working</span>
+            Window.Alert(<span class="pl-s"><span class="pl-pds">"</span>Success<span class="pl-pds">"</span></span>);
+        }
+    }
+} </pre></div>
+
+<p>The C# class above will be compiled into JavaScript and added to <strong>/Bridge/ouput/demo.js</strong> within your project. By default, Bridge will use the Namespace name as the file name. In this case: <strong>demo.js</strong>. There are many options to control the output of your JavaScript files, and the <a href="http://bridge.net/kb/attribute-reference/">Attribute Reference</a> is an important <a href="http://bridge.net/kb/">Knowledge Base</a> article to review. </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">Bridge</span>.<span class="pl-en">define</span>(<span class="pl-s"><span class="pl-pds">'</span>Demo.App<span class="pl-pds">'</span></span>, {
+    statics<span class="pl-k">:</span> {
+        config<span class="pl-k">:</span> {
+            <span class="pl-en">init</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+                <span class="pl-smi">Bridge</span>.<span class="pl-en">ready</span>(<span class="pl-v">this</span>.<span class="pl-smi">main</span>);
+            }
+        },
+        <span class="pl-en">main</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+            <span class="pl-c">// Simple alert() to confirm it's working</span>
+            <span class="pl-c1">window</span>.<span class="pl-c1">alert</span>(<span class="pl-s"><span class="pl-pds">"</span>Success<span class="pl-pds">"</span></span>);
+        }
+    }
+}); </pre></div>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>A full list of installation options available at <a href="http://bridge.net/download/">bridge.net/download/</a>, including full support on Windows, Mac OS and Linux for <a href="https://code.visualstudio.com/">Visual Studio Code</a> and <a href="http://www.monodevelop.com/">Mono Develop</a>.</p>
+
+<h3>
+<a id="bridge-for-visual-studio" class="anchor" href="#bridge-for-visual-studio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bridge for Visual Studio</h3>
+
+<p>If you're using Visual Studio, the best way to get started is by adding the Bridge.NET for Visual Studio <a href="https://visualstudiogallery.msdn.microsoft.com/dca5c80f-a0df-4944-8343-9c905db84757">extension</a>.</p>
+
+<p>From within Visual Studio, go to the <code>Tools &gt; Extensions and Updates...</code>.</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/62210/13193691/10876f0a-d73a-11e5-809d-69b090da6769.png" alt="Visual Studio Extensions and Updates"></p>
+
+<p>From the options on the left side, be sure to select <strong>Online</strong>, then search for <strong>Bridge</strong>. Clicking <strong>Download</strong> will install Bridge for Visual Studio. After installation is complete, Visual Studio may require a restart. </p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/62210/13193692/10964c46-d73a-11e5-8350-700236c98016.png" alt="Bridge for Visual Studio"></p>
+
+<p>After installation, you will have a new <strong>Bridge.NET</strong> project type. When creating new Bridge enabled projects, select this project type. </p>
+
+<h3>
+<a id="nuget" class="anchor" href="#nuget" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NuGet</h3>
+
+<p>Another option is installation of Bridge into a new <strong>C# Class Library</strong> project using <a href="https://www.nuget.org/packages/bridge">NuGet</a>. Within the NuGet Package Manager, search for <strong>Bridge</strong> and click to install. </p>
+
+<p>Another NuGet option is installing Bridge via the NuGet Command line. Run the following command:</p>
+
+<pre><code>Install-Package Bridge
+</code></pre>
+
+<p>More information regarding  Nuget package installation for Bridge is available in the <a href="http://bridge.net/kb/nuget-installation/">Knowledge Base</a>.</p>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Interested in contributing to Bridge? Please see <a href="https://github.com/bridgedotnet/Bridge/blob/master/.github/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+
+<p>We also flag some Issues as <a href="https://github.com/bridgedotnet/Bridge/issues?q=is%3Aopen+is%3Aissue+label%3Aup-for-grabs">up-for-grabs</a>. These are generally easy introductions to the inner workings of Bridge, although are items we just haven't had time to implement. Your help is always appreciated.</p>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>Bridge is continually tested and the full test runner is available at <a href="http://testing.bridge.net/">http://testing.bridge.net/</a>. </p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Bridge is developed by the team at <a href="http://object.net/">Object.NET</a>. Frameworks and Tools for .NET Developers.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p><strong>Apache License, Version 2.0</strong></p>
+
+<p>Please see <a href="LICENSE">LICENSE</a> for details.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/liruqi/Bridge">Bridge</a> is maintained by <a href="https://github.com/liruqi">liruqi</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
