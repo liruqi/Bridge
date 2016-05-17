@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>News Pro</title>
+    <script src="bridge.js"></script>
+    <script src="bridge.collections.js"></script>
+
+	<script language="JavaScript">
+		travelOnRawNode = function (node) {
+			if (node == null) {
+               return;
+            }
+			if (node.nodeType !== 1) {
+                console.log("nodeName: " + node.nodeName)
+                return;
+            }
+            var e = Bridge.cast(node, HTMLElement);
+            console.log(e.tagName)
+            if (node.childNodes != null) {
+                    $t = Bridge.getEnumerator(node.childNodes);
+                    do {
+                        var childNode = $t.getCurrent();
+                        travelOnRawNode(childNode);
+                    } while ($t.moveNext());
+                }
+		}
+		var d = document.createElement('html');
+		d.innerHTML = document.childNodes[1].innerHTML;
+		travelOnRawNode(d);
+    </script>
+</head>
+<body>
+    <div class="modal-tc-logo">
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 width="180px" height="90px" viewBox="0 0 180 90" enable-background="new 0 0 180 90" xml:space="preserve">
+			<polygon fill="#3E433E" points="90,0 90,30 60,30 60,90 30,90 30,30 0,30 0,0 "/>
+			<rect x="120" fill="#3E433E" width="60" height="30"/>
+			<polygon fill="#3E433E" points="180,60 180,90 90,90 90,30 120,30 120,60 "/>
+		</svg>
+	</div>
+</body></html>
